@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml is automatically generated from the ECT Basic Template generator. -->
+<!--It will contains the RPC's required to unlock the LTE cells. -->
+<!--It's generated for MOM version: 18.Q4 MTR CXP2020013/1-R57A20 (UP: CXP9024418/6-R54A162). -->
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+     <capabilities>
+          <capability>urn:ietf:params:netconf:base:1.0</capability>
+     </capabilities>
+</hello>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+     <edit-config>
+          <target>
+               <running />
+          </target>
+          <config>
+               <ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+                    <managedElementId>1</managedElementId>
+                    <SystemFunctions>
+                         <systemFunctionsId>1</systemFunctionsId>
+                         <Lm xmlns="urn:com:ericsson:ecim:RcsLM">
+                              <lmId>1</lmId>
+                              <fingerprint>Site1</fingerprint>
+                         </Lm>
+                    </SystemFunctions>
+               </ManagedElement>
+          </config>
+     </edit-config>
+</rpc>
+<rpc message-id="928" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+     <edit-config>
+          <target>
+               <candidate />
+          </target>
+          <config>
+               <ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+                    <managedElementId>1</managedElementId>
+                    <SystemFunctions>
+                         <systemFunctionsId>1</systemFunctionsId>
+                         <Lm xmlns="urn:com:ericsson:ecim:RcsLM">
+                              <lmId>1</lmId>
+                              <fingerprint>Site1</fingerprint>
+                         </Lm>
+                    </SystemFunctions>
+               </ManagedElement>
+          </config>
+     </edit-config>
+</rpc>
+<rpc message-id="9281" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+     <edit-config>
+          <config>
+               <ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+                    <managedElementId>1</managedElementId>
+                    <SystemFunctions>
+                         <systemFunctionsId>1</systemFunctionsId>
+                         <Lm xmlns="urn:com:ericsson:ecim:RcsLM">
+                              <lmId>1</lmId>
+                              <fingerprint>Site1</fingerprint>
+                         </Lm>
+                    </SystemFunctions>
+               </ManagedElement>
+          </config>
+     </edit-config>
+</rpc>
+<rpc message-id="9281"
+        xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <action>
+                <data>
+                        <ManagedElement xmlns="urn:com:ericsson:ecim:SgsnMmeTop"><managedElementId>CORE10SGSN001</managedElementId><SgsnMme xmlns="urn:com:ericsson:ecim:Sgsn_Mme"><sgsnMmeId>1</sgsnMmeId><NE><neId>1</neId><loadLicense><lkfName>sgsnmmelicence</lkfName></loadLicense></NE></SgsnMme></ManagedElement>
+                </data>
+        </action>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+        <action>
+                <data>
+                        <ManagedElement xmlns="urn:com:ericsson:ecim:SgsnMmeTop"><managedElementId>CORE10SGSN001</managedElementId><SgsnMme xmlns="urn:com:ericsson:ecim:Sgsn_Mme"><sgsnMmeId>1</sgsnMmeId><NE><neId>1</neId><loadLicense><lkfName>sgsnmmelicence</lkfName></loadLicense></NE></SgsnMme></ManagedElement>
+                </data>
+        </action>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running />
+		</source>
+		<filter type="subtree">
+			<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+				<managedElementId>1</managedElementId>
+				<SystemFunctions>
+					<systemFunctionsId>1</systemFunctionsId>
+					<Fm xmlns="urn:com:ericsson:ecim:RcsFm">
+						<fmId>1</fmId>
+					</Fm>
+				</SystemFunctions>
+			</ManagedElement>
+		</filter>
+	</get-config>
+</rpc>
+]]>]]>
+<rpc message-id="911" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running />
+		</source>
+		<filter type="subtree">
+			<ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+				<managedElementId>1</managedElementId>
+				<SystemFunctions>
+					<systemFunctionsId>1</systemFunctionsId>
+					<Fm xmlns="urn:com:ericsson:ecim:RcsFm">
+						<fmId>1</fmId>
+					</Fm>
+				</SystemFunctions>
+			</ManagedElement>
+		</filter>
+	</get-config>
+</rpc>
+]]>]]>
+<rpc message-id="912" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running />
+		</source>
+	</get-config>
+</rpc>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="Close Session">
+     <close-session />
+</rpc>
+]]>]]>

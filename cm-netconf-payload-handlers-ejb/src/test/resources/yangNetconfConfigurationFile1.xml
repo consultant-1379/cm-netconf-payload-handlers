@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml is automatically generated from the ECT Basic Template generator. -->
+<!--It will contains the RPC's required to unlock the LTE cells. -->
+<!--It's generated for MOM version: 18.Q4 MTR CXP2020013/1-R57A20 (UP: CXP9024418/6-R54A162). -->
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <capabilities>
+        <capability>urn:ietf:params:netconf:base:1.0</capability>
+    </capabilities>
+</hello>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <edit-config>
+        <target>
+            <running />
+        </target>
+        <config>
+            <udr xmlns="urn:rdns:com:ericsson:oammodel:ericsson-udr">
+                <geo-redundancy>
+                    <site>
+                        <id>1</id>
+                        <provisioning-priority>3</provisioning-priority>
+                    </site>
+                </geo-redundancy>
+            </udr>
+        </config>
+    </edit-config>
+</rpc>
+]]>]]>
+<rpc message-id="152"
+	xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<action xmlns="urn:ietf:params:xml:ns:yang:1">
+		<epg xmlns="urn:rdns:com:ericsson:oammodel:ericsson-epg">
+			<pgw>
+				<apn>
+					<name>apn01.epg02.ericsson.se</name>
+					<statistics></statistics>
+				</apn>
+			</pgw>
+		</epg>
+	</action>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<action xmlns="urn:ietf:params:xml:ns:yang:1">
+		<target>
+			<running />
+		</target>
+		<epg xmlns="urn:rdns:com:ericsson:oammodel:ericsson-epg">
+			<pgw>
+				<apn>
+					<name>apn01.epg02.ericsson.se</name>
+					<statistics></statistics>
+				</apn>
+			</pgw>
+		</epg>
+	</action>
+</rpc>
+]]>]]>
+ <rpc message-id="111" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running />
+		</source>
+		<filter type="subtree">
+			<diagnostic-data-collection
+				xmlns="urn:rdns:com:ericsson:oammodel:ericsson-data-collector-adp" />
+		</filter>
+	</get-config>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running />
+		</source>
+		<filter type="subtree">
+			<diagnostic-data-collection
+				xmlns="urn:rdns:com:ericsson:oammodel:ericsson-data-collector-adp" />
+		</filter>
+	</get-config>
+</rpc>
+]]>]]>  
+<?xml version="1.0" encoding="UTF-8"?>
+<rpc message-id="2" xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+	<get-config>
+		<source>
+			<running />
+		</source>
+	</get-config>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="Close Session">
+    <close-session />
+</rpc>
+]]>]]>

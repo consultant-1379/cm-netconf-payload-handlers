@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <artifactId>cm-netconf-payload-handlers</artifactId>
+    <groupId>com.ericsson.oss.mediation.cm.handlers</groupId>
+    <version>1.8.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>cm-netconf-payload-handlers-ejb</artifactId>
+  <packaging>ejb</packaging>
+
+  <name>[${project.parent.artifactId}] EJB module</name>
+
+  <properties>
+    <version.maven.ejb.plugin>3.1.0</version.maven.ejb.plugin>
+    <version.cdi.test.support>1.1.110</version.cdi.test.support>
+    <!-- <sonar.skip>true</sonar.skip> -->
+    <!-- <skipTests>true</skipTests> -->
+    <!-- <sonar.exclusions>**/test/java/**/*,**/test/groovy/**/*,**/test/utils/*,**/test/target/**/*,**/nosetests.xml,**/coverage.xml
+        </sonar.exclusions> -->
+    <version.gmaven>1.4</version.gmaven>
+  </properties>
+
+  <build>
+    <resources>
+      <resource>
+        <directory>src/main/resources</directory>
+        <filtering>true</filtering>
+      </resource>
+    </resources>
+    <plugins>
+      <!-- This plugin generates J2EE Enterprise Javabean (EJB) file as well
+    as the associated client jar. -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-ejb-plugin</artifactId>
+        <version>${version.maven.ejb.plugin}</version>
+        <configuration>
+          <ejbVersion>${version.ejb}</ejbVersion>
+        </configuration>
+      </plugin>
+      <!-- For Groovy Test -->
+      <plugin>
+        <groupId>org.codehaus.gmaven</groupId>
+        <artifactId>gmaven-plugin</artifactId>
+        <version>${version.gmaven}</version>
+        <configuration>
+          <providerSelection>2.0</providerSelection>
+          <source />
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>compile</goal>
+              <goal>testCompile</goal>
+            </goals>
+          </execution>
+        </executions>
+        <dependencies>
+          <dependency>
+            <groupId>org.codehaus.gmaven.runtime</groupId>
+            <artifactId>gmaven-runtime-2.0</artifactId>
+            <version>${version.gmaven}</version>
+            <exclusions>
+              <exclusion>
+                <groupId>org.codehaus.groovy</groupId>
+                <artifactId>groovy-all</artifactId>
+              </exclusion>
+            </exclusions>
+          </dependency>
+          <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>${version.groovy}</version>
+          </dependency>
+        </dependencies>
+      </plugin>
+      <plugin>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <configuration>
+          <useSystemClassLoader>true</useSystemClassLoader>
+          <useManifestOnlyJar>false</useManifestOnlyJar>
+          <useFile>false</useFile>
+          <includes>
+            <include>**/*Spec.java</include>
+            <include>**/*Test.java</include>
+          </includes>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+
+  <dependencies>
+    <!-- JEE Dependencies -->
+    <dependency>
+      <groupId>org.jboss.spec</groupId>
+      <artifactId>jboss-javaee-8.0</artifactId>
+      <version>${version.jboss.javaee}</version>
+      <type>pom</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>javax</groupId>
+      <artifactId>javaee-api</artifactId>
+      <version>${version.javax.javaee}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- ENM Dependencies -->
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.common.flow</groupId>
+      <artifactId>eventflow-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-resources-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.nms.mediation</groupId>
+      <artifactId>core-mediation-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.datalayer.dps</groupId>
+      <artifactId>dps-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-core-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-cluster-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-cluster-core</artifactId>
+      <version>${version.sdk.cluster.core}</version>
+      <!-- no need to specify version if imported Service Framework BOM -->
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-recording-api</artifactId>
+      <scope>provided</scope>
+      <!-- no need to specify version if imported Service Framework BOM -->
+    </dependency>
+
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-modeled-eventbus-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-context-api</artifactId>
+      <scope>provided</scope>
+    </dependency>
+
+    <!-- Netconf Dependencies -->
+    <dependency>
+      <groupId>com.ericsson.oss.services.cm.models</groupId>
+      <artifactId>cm-nbi-rest-netconf-model-jar</artifactId>
+      <version>1.1.4</version>
+      <exclusions>
+        <exclusion>
+          <groupId>org.codehaus.plexus</groupId>
+          <artifactId>plexus-utils</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.maven</groupId>
+          <artifactId>maven-model</artifactId>
+        </exclusion>
+        <exclusion>
+          <groupId>org.apache.maven</groupId>
+          <artifactId>maven-artifact</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.adapter</groupId>
+      <artifactId>netconf-resource-adapter-ra</artifactId>
+      <version>${version.netfconf.resource.adapter.ra}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.cba.handlers.netconf</groupId>
+      <artifactId>cba-netconf-connect-handler-ejb</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.util.netconf</groupId>
+      <artifactId>cba-netconf-mediation-api</artifactId>
+      <version>${version.cba.netconf.mediation.api}</version>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.util.netconf</groupId>
+      <artifactId>cba-netconf-mediation-jar</artifactId>
+      <version>${version.cba.netconf.mediation.api}</version>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.netconf.handlers</groupId>
+      <artifactId>netconf-session-builder-handler-ejb</artifactId>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.adapter</groupId>
+      <artifactId>netconf-resource-adapter-api</artifactId>
+      <version>${version.netconf.resource.adapter.api}</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.adapter</groupId>
+      <artifactId>com-netconf-model-xa-resource-provider-jar</artifactId>
+      <version>${version.com.ecim.netconf.xa.resource.provider}</version>
+      <type>jar</type>
+      <scope>provided</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.mediation.netconf</groupId>
+      <artifactId>netconf-session-api-jar</artifactId>
+      <version>${version.netconf.session.api}</version>
+    </dependency>
+    <!-- Test Dependencies -->
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-resources-non-cdi</artifactId>
+      <version>${version.sdk.resources.non.cdi}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>com.ericsson.oss.itpf.sdk</groupId>
+      <artifactId>sdk-cluster-core</artifactId>
+      <version>${version.sdk.cluster.core}</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+</project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml is automatically generated from the ECT Basic Template generator. -->
+<!--It will contains the RPC's required to unlock the LTE cells. -->
+<!--It's generated for MOM version: 18.Q4 MTR CXP2020013/1-R57A20 (UP: CXP9024418/6-R54A162). -->
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <capabilities>
+        <capability>urn:ietf:params:netconf:base:1.0</capability>
+        <capability>urn:com:ericsson:ebase:2.1.0</capability>
+    </capabilities>
+</hello>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="12">
+    <edit-config>
+        <target>
+            <running />
+        </target>
+        <config>
+            <udr xmlns="urn:rdns:com:ericsson:oammodel:ericsson-udr">
+                <geo-redundancy>
+                    <site>
+                        <id>1</id>
+                        <provisioning-priority>3</provisioning-priority>
+                    </site>
+                </geo-redundancy>
+            </udr>
+        </config>
+    </edit-config>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="Close Session">
+    <close-session />
+</rpc>
+]]>]]>

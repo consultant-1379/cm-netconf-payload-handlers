@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>cm-netconf-payload-handlers</artifactId>
+		<groupId>com.ericsson.oss.mediation.cm.handlers</groupId>
+		<version>1.8.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>cm-netconf-payload-handlers-ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>[${project.parent.artifactId}] EAR module</name>
+
+	<properties>
+		<version.maven-ear-plugin>2.7</version.maven-ear-plugin>
+		<project.ear.contextRoot>${project.parent.artifactId}</project.ear.contextRoot>
+		<project.ear.Dependencies>
+			com.ericsson.oss.mediation.util.netconf.api export,
+			com.ericsson.oss.mediation.engine-api export,
+			com.ericsson.oss.itpf.datalayer.dps.api export,
+			com.ericsson.oss.mediation.adapter.netconf.jca.api export,
+			com.ericsson.oss.itpf.sdk.service-framework:4.x services export meta-inf
+		</project.ear.Dependencies>
+	</properties>
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources</directory>
+				<filtering>true</filtering>
+			</resource>
+		</resources>
+		<outputDirectory>${project.parent.artifactId}-${project.version}</outputDirectory>
+		<plugins>
+			<plugin>
+				<groupId>org.jboss.as.plugins</groupId>
+				<artifactId>jboss-as-maven-plugin</artifactId>
+				<configuration>
+					<filename>${project.parent.artifactId}.${project.packaging}</filename>
+					<skip>false</skip>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>${version.maven-ear-plugin}</version><!--$NO-MVN-MAN-VER$ -->
+				<configuration>
+					<generateApplicationXml>true</generateApplicationXml>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+					<filtering>true</filtering>
+					<applicationName>${project.parent.artifactId}</applicationName>
+					<finalName>${project.parent.artifactId}-${project.parent.version}</finalName>
+					<archive>
+						<manifestEntries>
+							<Dependencies>${project.ear.Dependencies}</Dependencies>
+						</manifestEntries>
+					</archive>
+					<modules>
+						<ejbModule>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.parent.artifactId}-ejb</artifactId>
+						</ejbModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-ejb</artifactId>
+			<version>${project.version}</version>
+			<type>ejb</type>
+		</dependency>
+	</dependencies>
+</project>

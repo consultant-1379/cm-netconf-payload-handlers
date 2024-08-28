@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml is automatically generated from the ECT Basic Template generator. -->
+<!--It will contains the RPC's required to unlock the LTE cells. -->
+<!--It's generated for MOM version: 18.Q4 MTR CXP2020013/1-R57A20 (UP: CXP9024418/6-R54A162). -->
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+    <capabilities>
+        <capability>urn:ietf:params:netconf:base:1.0</capability>
+    </capabilities>
+</hello>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="Create GNBCUCPfunction">
+  <edit-config>
+    <target>
+      <running />
+    </target>
+    <config>
+      <ManagedElement xmlns="urn:3gpp:sa5:_3gpp-common-managed-element">
+        <id>1</id>
+        <attributes>
+          <priorityLabel>1</priorityLabel>
+        </attributes>
+        <GNBCUCPFunction xmlns="urn:3gpp:sa5:_3gpp-nr-nrm-gnbcucpfunction">
+          <id>1</id>
+          <attributes>
+            <endpointResourceRef xmlns="urn:rdns:com:ericsson:oammodel:ericsson-gnbcucpfunction-ext-vcucp">ManagedElement=1,GNBCUCPFunction=1,EndpointResource=1</endpointResourceRef>
+            <gNBCUName>vCUCP</gNBCUName>
+            <gNBId>12345</gNBId>
+            <gNBIdLength>22</gNBIdLength>
+            <managedElementId>1</managedElementId>
+            <pLMNId>
+              <mcc>262</mcc>
+              <mnc>80</mnc>
+            </pLMNId>
+            <transportServiceId xmlns="urn:rdns:com:ericsson:oammodel:ericsson-gnbcucpfunction-ext-vcucp">tsrd2</transportServiceId>
+          </attributes>
+          <EndpointResource xmlns="urn:rdns:com:ericsson:oammodel:ericsson-endpoint-resource-vcucp">
+            <id>1</id>
+            <LocalIpEndpoint xmlns="urn:rdns:com:ericsson:oammodel:ericsson-local-ip-endpoint-vcucp">
+              <id>1</id>
+              <attributes>
+                <ipAddressIdList>midhaul</ipAddressIdList>
+                <interfaceList>E1</interfaceList>
+              </attributes>
+            </LocalIpEndpoint>
+            <LocalSctpEndpoint xmlns="urn:rdns:com:ericsson:oammodel:ericsson-local-sctp-endpoint-vcucp">
+              <id>1</id>
+              <attributes>
+                <sctpEndpointId>f1</sctpEndpointId>
+                <interfaceList>F1</interfaceList>
+              </attributes>
+            </LocalSctpEndpoint>
+            <LocalSctpEndpoint xmlns="urn:rdns:com:ericsson:oammodel:ericsson-local-sctp-endpoint-vcucp">
+              <id>2</id>
+              <attributes>
+                <sctpEndpointId>x2</sctpEndpointId>
+                <interfaceList>X2</interfaceList>
+              </attributes>
+            </LocalSctpEndpoint>
+            <LocalSctpEndpoint xmlns="urn:rdns:com:ericsson:oammodel:ericsson-local-sctp-endpoint-vcucp">
+              <id>3</id>
+              <attributes>
+                <sctpEndpointId>ng</sctpEndpointId>
+                <interfaceList>NG</interfaceList>
+              </attributes>
+            </LocalSctpEndpoint>
+            <LocalSctpEndpoint xmlns="urn:rdns:com:ericsson:oammodel:ericsson-local-sctp-endpoint-vcucp">
+              <id>4</id>
+              <attributes>
+                <sctpEndpointId>xn</sctpEndpointId>
+                <interfaceList>XN</interfaceList>
+              </attributes>
+            </LocalSctpEndpoint>
+          </EndpointResource>
+          <CUCP5qiTable xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qitable-vcucp">
+            <id>1</id>
+            <attributes>
+              <default5qiTable>true</default5qiTable>
+            </attributes>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>1</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>1</profile5qi>
+                <rlcMode>UM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>2</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>2</profile5qi>
+                <rlcMode>UM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>3</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>3</profile5qi>
+                <rlcMode>UM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>4</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>4</profile5qi>
+                <rlcMode>UM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>5</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>5</profile5qi>
+                <rlcMode>AM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>6</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>6</profile5qi>
+                <rlcMode>AM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>7</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>7</profile5qi>
+                <rlcMode>AM</rlcMode>
+                <tPdcpDiscard>150</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>8</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>8</profile5qi>
+                <rlcMode>AM</rlcMode>
+                <tPdcpDiscard>1500</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+            <CUCP5qi xmlns="urn:rdns:com:ericsson:oammodel:ericsson-cucp5qi-vcucp">
+              <id>9</id>
+              <attributes>
+                <tReorderingUl>20</tReorderingUl>
+                <profile5qi>9</profile5qi>
+                <rlcMode>AM</rlcMode>
+                <tPdcpDiscard>1500</tPdcpDiscard>
+              </attributes>
+            </CUCP5qi>
+          </CUCP5qiTable>
+        </GNBCUCPFunction>
+      </ManagedElement>
+    </config>
+  </edit-config>
+</rpc>
+]]>]]>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--This xml is automatically generated from the ECT Basic Template generator. -->
+<!--It will contains the RPC's required to unlock the LTE cells. -->
+<!--It's generated for MOM version: 18.Q4 MTR CXP2020013/1-R57A20 (UP: CXP9024418/6-R54A162). -->
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+     <capabilities>
+          <capability>urn:ietf:params:netconf:base:1.0</capability>
+          <capability>urn:com:ericsson:ebase:2.1.0</capability>
+     </capabilities>
+</hello>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="1">
+     <edit-config>
+          <target>
+               <running />
+          </target>
+          <config>
+               <ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+                    <!--Comments for test with line exchange -->
+                    <managedElementId>1</managedElementId>
+                    <SystemFunctions>
+                         <systemFunctionsId>1</systemFunctionsId>
+                         <Lm xmlns="urn:com:ericsson:ecim:RcsLM">
+                              <lmId>1</lmId>
+                              <fingerprint>Site1</fingerprint>
+                         </Lm>
+                    </SystemFunctions>
+               </ManagedElement>
+          </config>
+     </edit-config>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="Close Session">
+     <close-session />
+</rpc>
+]]>]]>
+<hello xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+     <capabilities>
+          <capability>urn:ietf:params:netconf:base:1.0</capability>
+          <capability>urn:com:ericsson:ebase:3.1.0</capability>
+     </capabilities>
+</hello>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="2">
+     <edit-config>
+          <target>
+               <running />
+          </target>
+          <config>
+               <ManagedElement xmlns="urn:com:ericsson:ecim:ComTop">
+                    <managedElementId>1</managedElementId>
+                    <SystemFunctions>
+                         <systemFunctionsId>1</systemFunctionsId>
+                         <Lm xmlns="urn:com:ericsson:ecim:RcsLM">
+                              <lmId>1</lmId>
+                              <fingerprint>Site2</fingerprint>
+                         </Lm>
+                    </SystemFunctions>
+               </ManagedElement>
+          </config>
+     </edit-config>
+</rpc>
+]]>]]>
+<rpc xmlns="urn:ietf:params:xml:ns:netconf:base:1.0" message-id="Close Session again">
+     <close-session />
+</rpc>
+]]>]]>
